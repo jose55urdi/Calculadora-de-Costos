@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Precios de Producto</title>
+    <meta name="description" content="Calculadora para emprendedores: suma tus costos y aplica el margen de ganancia para obtener tu precio de venta final.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <main class="calculator-container">
+        <header>
+            <h1>Calculadora de Costos</h1>
+            <p>Calcula el precio de venta ideal sumando tus costos y aplicando tu margen deseado.</p>
+        </header>
+
+        <form id="calculator-form">
+            <section class="input-section">
+                <h2>1. Costos del Producto</h2>
+                
+                <div class="input-group">
+                    <label for="costo-mercaderia">Costo de la Mercadería (al comprar o producir)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="costo-mercaderia" name="costo-mercaderia" step="0.01" min="0" placeholder="0.00" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="costo-transporte">Costo de Transporte / Logística</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="costo-transporte" name="costo-transporte" step="0.01" min="0" placeholder="0.00">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="costo-empaque">Costo de Empaque (Packaging)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="costo-empaque" name="costo-empaque" step="0.01" min="0" placeholder="0.00">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="costo-otros">Otros Costos (Publicidad, comisiones, etc.)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="costo-otros" name="costo-otros" step="0.01" min="0" placeholder="0.00">
+                    </div>
+                </div>
+            </section>
+
+            <section class="input-section margin-section">
+                <h2>2. Margen de Ganancia</h2>
+                <div class="input-group">
+                    <label for="margen-ganancia">Porcentaje de Venta (Beneficio Deseado)</label>
+                    <div class="input-wrapper percentage-wrapper">
+                        <input type="number" id="margen-ganancia" name="margen-ganancia" step="0.1" min="0" placeholder="0" required>
+                        <span class="percentage-symbol">%</span>
+                    </div>
+                    <small class="helper-text">Este porcentaje define cuánto dinero extra ganarás por encima de tus costos totales.</small>
+                </div>
+            </section>
+        </form>
+
+        <section class="results-section">
+            <h2>Resultados</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>Costo Total</h3>
+                    <p class="amount" id="resultado-costo">$0.00</p>
+                </div>
+                <div class="result-card highlight">
+                    <h3>Precio de Venta Sugerido</h3>
+                    <p class="amount" id="resultado-precio">$0.00</p>
+                </div>
+                <div class="result-card">
+                    <h3>Tu Ganancia (Utilidad neta)</h3>
+                    <p class="amount" id="resultado-ganancia">$0.00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
